@@ -9,13 +9,13 @@ test.html
 test.sass
 test.css
 test.css.map
+.npmrc
 
 # Folders
-
 .idea/
-.sass-cache
-_gh_pages
-_site
-dev
-node_modules
+.sass-cache/
+_gh_pages/
+_site/
+dev/
+node_modules/
 test/output/

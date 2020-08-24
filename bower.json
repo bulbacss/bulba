@@ -1,8 +1,8 @@
 {
-  "name": "bulma",
+  "name": "bulba",
   "version": "0.9.0",
-  "homepage": "https://bulma.io",
-  "authors": ["jgthms <bbxdesign@gmail.com>"],
+  "homepage": "https://bulba.cf",
+  "authors": ["Adrien Foulon <tofandel@tukan.hu>"],
   "description": "Modern CSS framework based on Flexbox",
   "main": "bulma.sass",
   "keywords": ["css", "sass", "flexbox", "responsive", "framework"],

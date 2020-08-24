@@ -2,7 +2,7 @@
   "name": "bulba",
   "version": "0.9.0",
   "homepage": "https://bulba.cf",
-  "author": "Adrien Foulon <adrien.foulon@tukan.hu>",
+  "author": "Adrien Foulon <tofandel@tukan.hu>",
   "description": "Modern CSS framework based on bulma",
   "main": "bulma.sass",
   "unpkg": "css/bulba.css",
@@ -10,6 +10,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bulbacss/bulba.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "license": "MIT",
   "keywords": [
@@ -38,7 +41,9 @@
     "build:sass-vars": "node build.js bulma.sass css/bulma.themeable.css --themeable --full --map --min",
     "build:rtl": "node build.js bulma.sass css/bulma-rtl.css --rtl --map --min",
     "test:theme": "node build.js test/sass/theme.sass test/output/theme.css bulma.sass --themeable",
-    "deploy": "npm run build",
+    "deploy": "npm run build && npm version patch",
+    "deploy:minor": "npm run build && npm version minor",
+    "deploy:major": "npm run build && npm version major",
     "start": "npm run build:sass -- --watch"
   },
   "bin": {
