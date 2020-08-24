@@ -7,6 +7,12 @@
       "width":"108",
       "height":"40"
     },
+    "tutlance": {
+      "name": "tutlance",
+      "url": "https://tutlance.com/",
+      "width":"135",
+      "height":"42"
+    },
     "themeisle": {
       "name": "themeisle",
       "url": "https://themeisle.com/",
@@ -85,7 +91,7 @@
     "papersowl": {
       "name": "PapersOwl",
       "url": "https://papersowl.com/write-my-essay-please",
-      "title": "Website that writes your essay",
+      "title": "write my essay please",
       "width":"126",
       "height":"42",
       "follow": true
@@ -143,8 +149,8 @@
     },
     "edusson": {
       "name": "edusson",
-      "url": "https://edusson.com/",
-      "title": "Essay writing service",
+      "url": "https://edusson.com/write-my-research-paper",
+      "title": "write my research paper",
       "width":"104",
       "height":"20",
       "follow": true
@@ -208,36 +214,63 @@
       "title": "Bonusfinder",
       "width":"160",
       "height":"34"
+    },
+    "pillarwm": {
+      "name": "pillarwm",
+      "url": "https://pillarwm.com/",
+      "title": "Pillar",
+      "width":"150",
+      "height":"53"
+    },
+    "sanyodigital": {
+      "name": "sanyodigital",
+      "url": "https://sanyodigital.com/",
+      "title": "Sanyo Digital",
+      "width":"160",
+      "height":"33"
+    },
+    "coupons4printing": {
+      "name": "coupons4printing",
+      "url": "https://www.coupons4printing.com/",
+      "title": "Coupons For Printing",
+      "width":"60",
+      "height":"60"
+    },
+    "inkoop": {
+      "name": "inkoop",
+      "url": "https://www.inkoop.io/",
+      "title": "Inkoop - Website/App development company",
+      "width":"150",
+      "height":"43"
     }
   },
   "home": [
     "themeisle"
-    ,"tooltwist"
     ,"dontpayfull"
-    ,"devsquad"
     ,"vpsserver"
-    ,"craft"
-    ,"paperleaf"
-    ,"papersowl"
     ,"sparheld"
     ,"bid4papers"
     ,"writersperhour"
-    ,"searchpromocodes"
     ,"clothingric"
     ,"edubirdie"
-    ,"edusson"
     ,"emucoupon"
     ,"namobot"
     ,"firesticktricks"
     ,"airtract"
     ,"realtimecommunications"
     ,"polygon"
-    ,"cooltechzone"
     ,"bonusfinder"
     ,"monovm"
+    ,"tutlance"
+    ,"pillarwm"
+    ,"sanyodigital"
+    ,"coupons4printing"
+    ,"papersowl"
+    ,"edusson"
+    ,"inkoop"
   ],
   "footer": [
-    "writersperhour"
-    ,"polygon"
+    "polygon"
+    ,"inkoop"
   ]
 }
