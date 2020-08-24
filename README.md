@@ -1,6 +1,6 @@
-# [Bulma](https://bulma.io)
+# [Bulma](https://bulba.cf)
 
-Bulma is a **modern CSS framework** based on [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes).
+Bulba is a **modern CSS framework** based on [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes).
 
 [![npm](https://img.shields.io/npm/v/bulma.svg)][npm-link]
 [![npm](https://img.shields.io/npm/dm/bulma.svg)][npm-link]
@@ -72,7 +72,7 @@ Internet Explorer (10+) is only partially supported.
 
 The documentation resides in the [docs](docs) directory, and is built with the Ruby-based [Jekyll](https://jekyllrb.com/) tool.
 
-Browse the [online documentation here.](https://bulma.io/documentation/overview/start/)
+Browse the [online documentation here.](https://bulba.cf/documentation/overview/start/)
 
 ## Related projects
 
@@ -123,8 +123,8 @@ Browse the [online documentation here.](https://bulma.io/documentation/overview/
 
 ## Copyright and license
 
-Code copyright 2020 Jeremy Thomas. Code released under [the MIT license](https://github.com/jgthms/bulma/blob/master/LICENSE).
+Code released under [the MIT license](https://github.com/jgthms/bulma/blob/master/LICENSE).
 
-[npm-link]: https://www.npmjs.com/package/bulma
+[npm-link]: https://www.npmjs.com/package/bulba
 [awesome-link]:  https://github.com/awesome-css-group/awesome-css
 [awesome-badge]: https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg

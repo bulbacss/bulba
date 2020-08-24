@@ -1,19 +1,15 @@
 {
-  "name": "bulma",
+  "name": "bulba",
   "version": "0.9.0",
-  "homepage": "https://bulma.io",
-  "author": {
-    "name": "Jeremy Thomas",
-    "email": "bbxdesign@gmail.com",
-    "url": "https://jgthms.com"
-  },
-  "description": "Modern CSS framework based on Flexbox",
+  "homepage": "https://bulba.cf",
+  "author": "Adrien Foulon <adrien.foulon@tukan.hu>",
+  "description": "Modern CSS framework based on bulma",
   "main": "bulma.sass",
-  "unpkg": "css/bulma.css",
-  "style": "bulma/css/bulma.min.css",
+  "unpkg": "css/bulba.css",
+  "style": "css/bulba.min.css",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jgthms/bulma.git"
+    "url": "git+https://github.com/bulbacss/bulba.git"
   },
   "license": "MIT",
   "keywords": [
@@ -24,7 +20,7 @@
     "framework"
   ],
   "bugs": {
-    "url": "https://github.com/jgthms/bulma/issues"
+    "url": "https://github.com/bulbacss/bulba/issues"
   },
   "devDependencies": {
     "autoprefixer": "^9.8.0",
@@ -43,11 +39,7 @@
     "build:rtl": "node build.js bulma.sass css/bulma-rtl.css --rtl --map --min",
     "test:theme": "node build.js test/sass/theme.sass test/output/theme.css bulma.sass --themeable",
     "deploy": "npm run build",
-    "start": "npm run build:sass -- --watch",
-
-    "rtl": "echo 'The rtl script has been deprecated use build:rtl instead' && npm run build:rtl --",
-    "build-clean": "echo 'The build-clean script has been deprecated use build:clean instead' && npm run build:clean --",
-    "build-sass": "echo 'The build-sass script has been deprecated use build:sass instead' && npm run build:sass --"
+    "start": "npm run build:sass -- --watch"
   },
   "bin": {
     "bulma-build-css": "./build.js"
@@ -56,6 +48,8 @@
     "css",
     "sass",
     "bulma.sass",
+    "bulma-dark.sass",
+    "bulma-rtl.sass",
     "LICENSE",
     "README.md"
   ]

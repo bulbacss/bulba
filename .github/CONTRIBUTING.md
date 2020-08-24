@@ -4,6 +4,7 @@ Thanks for helping out! 😇
 
 * Make sure the issue hasn't been raised yet
 * Include **screenshots** and animated GIFs in your issue whenever possible
+* Include information about your browser if it applies (Eg: chrome v80, firefox v79)
 
 ### Submitting a Pull Request
 
