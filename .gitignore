@@ -10,6 +10,8 @@ test.css
 test.css.map
 .npmrc
 *.scss
+yarn.lock
+
 
 # Folders
 scss/
