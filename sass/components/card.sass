@@ -1,6 +1,6 @@
 $card-color: v("text") !default
 $card-background-color: v("scheme-main") !default
-$card-shadow: 0 0.5em 1em -0.125em vAlphaChange("scheme-invert", 0.1), 0 0px 0 1px vAlphaChange("scheme-invert", 0.02) !default
+$card-shadow: 0 0.5em 1em -0.125em vAlphaChange("scheme-invert", 0.1), 0 0 0 1px vAlphaChange("scheme-invert", 0.02) !default
 $card-radius: 0 !default
 
 $card-header-background-color: transparent !default
@@ -44,8 +44,8 @@ $card-media-margin: v("block-spacing") !default
   position: relative
 
 .card-header
-  background-color: v("card-header-background-color")
   align-items: stretch
+  background-color: v("card-header-background-color")
   box-shadow: v("card-header-shadow")
   display: flex
 
@@ -75,9 +75,9 @@ $card-media-margin: v("block-spacing") !default
   padding: v("card-content-padding")
 
 .card-footer
+  align-items: stretch
   background-color: v("card-footer-background-color")
   border-top: v("card-footer-border-top")
-  align-items: stretch
   display: flex
 
 .card-footer-item

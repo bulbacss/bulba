@@ -125,8 +125,8 @@ $tabs-toggle-link-active-color: v("link-invert") !default
       &.is-active
         a
           background-color: v("tabs-boxed-link-active-background-color")
-          border-color: v("tabs-boxed-link-active-border-color")
           border-bottom-color: v("tabs-boxed-link-active-border-bottom-color") !important
+          border-color: v("tabs-boxed-link-active-border-color")
   &.is-fullwidth
     li
       flex-grow: 1
@@ -158,7 +158,7 @@ $tabs-toggle-link-active-color: v("link-invert") !default
           color: v("tabs-toggle-link-active-color")
           z-index: 1
     ul
-      border-bottom: none
+      border-bottom: 0
     &.is-toggle-rounded
       li
         &:first-child a

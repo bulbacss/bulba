@@ -112,16 +112,16 @@
   position: relative
 
 .bd-link-figure
+  min-width: 1.5em
   position: absolute
   right: calc(100% + 0.75em)
   text-align: center
   top: 0
-  min-width: 1.5em
 
 .bd-link-counter
   color: v("link")
-  display: block
   counter-increment: bd-links
+  display: block
   font-weight: v("weight-normal")
   &::before
     content: counter(bd-links)

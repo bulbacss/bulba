@@ -32,7 +32,8 @@
     "postcss": "^7.0.32",
     "postcss-calc": "^7.0.2",
     "postcss-var-optimize": "^0.0.4",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "sass-lint-auto-fix": "^0.21.0"
   },
   "scripts": {
     "build": "npm run build:clean && npm run build:sass && npm run build:rtl",
@@ -44,7 +45,9 @@
     "deploy": "npm run build && npm version patch && sass-convert sass scss -R --from sass --to scss",
     "deploy:minor": "npm run build && npm version minor",
     "deploy:major": "npm run build && npm version major",
-    "start": "npm run build:sass -- --watch"
+    "start": "npm run build:sass -- --watch",
+    "lint": "sass-lint -v -c.sass-lint.yml",
+    "lint:fix": "sass-lint-auto-fix -c.sass-lint.yml"
   },
   "bin": {
     "bulma-build-css": "./build.js"

@@ -266,8 +266,8 @@ $button-static-border-color: v("border") !default
           color: $color-invert
       // If light and dark colors are provided
       @if isRegistered($name+"-dark")
-        $color-light: v($name+"-light")
         $color-dark: v($name+"-dark")
+        $color-light: v($name+"-light")
         &.is-light
           background-color: $color-light
           color: $color-dark
@@ -319,8 +319,8 @@ $button-static-border-color: v("border") !default
   &.is-static
     background-color: v("button-static-background-color")
     border-color: v("button-static-border-color")
-    color: v("button-static-color")
     box-shadow: none
+    color: v("button-static-color")
     pointer-events: none
 
   &.is-rounded

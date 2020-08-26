@@ -115,27 +115,27 @@ $cube-factor: 10px
 
 @keyframes bdCube1
   0%
-    transform: translate3d(0, (-5 * $cube-factor), 0)
     opacity: 0
+    transform: translate3d(0, (-5 * $cube-factor), 0)
   25%, 100%
-    transform: translate3d(0, 0, 0)
     opacity: 1
+    transform: translate3d(0, 0, 0)
 
 @keyframes bdCube2
   0%
-    transform: translate3d((-4 * $cube-factor), (3 * $cube-factor), 0)
     opacity: 0
+    transform: translate3d((-4 * $cube-factor), (3 * $cube-factor), 0)
   25%, 100%
-    transform: translate3d(0, 0, 0)
     opacity: 1
+    transform: translate3d(0, 0, 0)
 
 @keyframes bdCube3
   0%
-    transform: translate3d((4 * $cube-factor), (3 * $cube-factor), 0)
     opacity: 0
+    transform: translate3d((4 * $cube-factor), (3 * $cube-factor), 0)
   25%, 100%
-    transform: translate3d(0, 0, 0)
     opacity: 1
+    transform: translate3d(0, 0, 0)
 
 %bd-focus-animation-cube
   @extend %bd-focus-animation
@@ -150,13 +150,13 @@ $cube-factor: 10px
 
 .bd-focus-cube-2
   @extend %bd-focus-animation-cube
-  animation-name: bdCube2
   animation-delay: $focus-delay + $wait + $delay
+  animation-name: bdCube2
 
 .bd-focus-cube-3
   @extend %bd-focus-animation-cube
-  animation-name: bdCube3
   animation-delay: $focus-delay + $wait + ($delay * 2)
+  animation-name: bdCube3
 
 @keyframes bdFadeIn
   from

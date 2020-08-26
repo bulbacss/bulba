@@ -21,8 +21,8 @@
     vertical-align: top
   +tablet
     &.is-fullwidth
-      border-left: none
-      border-right: none
+      border-left: 0
+      border-right: 0
       padding: 0
 
 .bd-example,
@@ -39,7 +39,7 @@
   & + .highlight
     border: 1px solid v("yellow")
     border-radius: 0 0 v("radius") v("radius")
-    border-top: none
+    border-top: 0
     margin-top: -1.5rem
     &:not(:last-child)
       margin-bottom: 1.5rem
@@ -50,8 +50,8 @@
   margin-top: 2rem
   position: relative
   &::before
-    content: "Snippet"
     align-items: stretch
+    content: "Snippet"
     display: flex
 
 .bd-snippet-preview
@@ -137,8 +137,8 @@
   box-shadow: 0 0 0 2px v("yellow")
 
 .highlight pre
-  max-height: 320px
   margin-bottom: 0 !important
+  max-height: 320px
 
 .highlight-full,
 #navbarJsExample
@@ -191,7 +191,7 @@ $structure-invert: v("danger-invert")
   .bd-copy,
   .bd-expand
     background: none
-    border: none
+    border: 0
     color: v("text")
     cursor: pointer
     font-size: 0.625rem
@@ -213,7 +213,7 @@ $structure-invert: v("danger-invert")
     +overlay
     align-items: center
     background-color: vAlphaChange("background", 0.7)
-    border: none
+    border: 0
     color: rgba(#000, 0.5)
     cursor: pointer
     display: none
@@ -241,15 +241,15 @@ $structure-invert: v("danger-invert")
 .section.is-fullwidth
   padding: 0 !important
   .bd-snippet
-    border-left: none
+    border-left: 0
     border-radius: 0
-    border-right: none
+    border-right: 0
   .bd-example
-    border-left: none
+    border-left: 0
     border-radius: 0
-    border-right: none
+    border-right: 0
     padding: 0
     & + .highlight
-      border-left: none
+      border-left: 0
       border-radius: 0
-      border-right: none
+      border-right: 0

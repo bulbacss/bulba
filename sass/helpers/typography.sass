@@ -1,4 +1,4 @@
-=typography-size($target:'')
+=typography-size($target: '')
   @each $size in $sizes
     $i: index($sizes, $size)
     .is-size-#{$i}#{if($target == '', '', '-' + $target)}

@@ -41,10 +41,13 @@
     transition-property: background-color, opacity, transform
     transition-timing-function: v("easing")
     width: 16px
+
     &:nth-child(1)
       top: calc(50% - 6px)
+
     &:nth-child(2)
       top: calc(50% - 1px)
+
     &:nth-child(3)
       top: calc(50% + 4px)
   &:hover
@@ -54,8 +57,10 @@
     span
       &:nth-child(1)
         transform: translateY(5px) rotate(45deg)
+
       &:nth-child(2)
         opacity: 0
+
       &:nth-child(3)
         transform: translateY(-5px) rotate(-45deg)
 
@@ -162,12 +167,14 @@
         @else
           @warn "Invalid usage of ltr-property"
       @else if type-of($spacing) == 'list' and length($spacing) == 4
-          #{$property}: nth($spacing, 1) nth($spacing, 4) nth($spacing, 3) nth($spacing, 2)
+        #{$property}: nth($spacing, 1) nth($spacing, 4) nth($spacing, 3) nth($spacing, 2)
       @else
-        +ltr-property($property, $spacing, true) //Warn of deprecated use
+        +ltr-property($property, $spacing, true)
+      //Warn of deprecated use
     @else
       @if not str-index($property, 'left') and not str-index($property, 'right') and type-of($spacing) != 'list'
-        +ltr-property($property, $spacing, true) //Warn of deprecated use
+        +ltr-property($property, $spacing, true)
+        //Warn of deprecated use
       @else
         #{$property}: $spacing
 
@@ -181,10 +188,10 @@
 // Placeholders
 
 =unselectable
-  -webkit-touch-callout: none
-  -webkit-user-select: none
   -moz-user-select: none
   -ms-user-select: none
+  -webkit-touch-callout: none
+  -webkit-user-select: none
   user-select: none
 
 %unselectable
@@ -221,10 +228,9 @@
   -moz-appearance: none
   -webkit-appearance: none
   background-color: vAlpha("scheme-invert", 0.2)
-  border: none
+  border: 0
   border-radius: v("radius-rounded")
   cursor: pointer
-  pointer-events: auto
   display: inline-block
   flex-grow: 0
   flex-shrink: 0
@@ -235,6 +241,7 @@
   min-height: 20px
   min-width: 20px
   outline: none
+  pointer-events: auto
   position: relative
   vertical-align: top
   width: 20px

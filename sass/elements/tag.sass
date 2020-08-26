@@ -31,8 +31,8 @@ $tag-delete-margin: 1px !default
   &.is-centered
     justify-content: center
     .tag
-      margin-right: 0.25rem
       margin-left: 0.25rem
+      margin-right: 0.25rem
   &.is-right
     justify-content: flex-end
     .tag
@@ -76,8 +76,8 @@ $tag-delete-margin: 1px !default
       color: $color-invert
       // If a light and dark colors are provided
       @if isRegistered($name+'-dark')
-        $color-light: v($name+'-light')
         $color-dark: v($name+'-dark')
+        $color-light: v($name+'-light')
         &.is-light
           background-color: $color-light
           color: $color-dark
