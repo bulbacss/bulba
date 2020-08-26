@@ -3,8 +3,8 @@ name: Lint
 on: push
 
 jobs:
-  run-linters:
-    name: Run linters
+  lint-build:
+    name: Lint and build
     runs-on: ubuntu-latest
 
     strategy:
@@ -31,5 +31,6 @@ jobs:
             ${{ runner.os }}-
       - run: npm install
       - run: npm run lint:fix
+      - run: npm run build
         env:
           CI: true
