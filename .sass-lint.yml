@@ -12,7 +12,7 @@ syntax:
 resolvers:
   property-sort-order: 1
   attribute-quotes: 1
-  border-zero: 0
+  border-zero: 1
   no-color-keywords: 1
   no-css-comments: 0
   no-important: 0
