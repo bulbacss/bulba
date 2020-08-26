@@ -9,6 +9,7 @@ test.sass
 test.css
 test.css.map
 .npmrc
+*.scss
 
 # Folders
 scss/

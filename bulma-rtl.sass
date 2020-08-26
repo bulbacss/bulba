@@ -1,3 +1,35 @@
-@charset "utf-8"
-$rtl: true
-@import "bulma"
+// General colors
+
+@include register("scheme-main", v("black"));
+@include register("scheme-main-bis", v("black-bis"));
+@include register("scheme-main-ter", v("black-ter"));
+@include register("scheme-invert", v("white"));
+@include register("scheme-invert-bis", v("white-bis"));
+@include register("scheme-invert-ter", v("white-ter"));
+
+@include register("background", v("black-ter"));
+
+// Border colors
+
+@include register("border", v("grey-darker"));
+@include register("border-hover", v("grey-dark"));
+@include register("border-light", v("grey-darker"));
+@include register("border-light-hover", v("grey-dark"));
+
+// Text colors
+
+@include register("text", v("grey-light"));
+@include register("text-invert", v("grey-darker"));
+@include register("text-light", v("grey"));
+@include register("text-strong", v("white"));
+
+// Link colors
+
+@include register("link-hover", v("white"));
+@include register("link-hover-border", v("grey-dark"));
+
+@include register("link-focus", v("white"));
+@include register("link-focus-border", v("blue"));
+
+@include register("link-active", v("white"));
+@include register("link-active-border", v("grey-light"));
