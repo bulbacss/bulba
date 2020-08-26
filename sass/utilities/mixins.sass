@@ -164,6 +164,7 @@
             #{$property}: nth($spacing, 2) nth($spacing, 1) nth($spacing, 4) nth($spacing, 3)
           @else
             @warn "Invalid usage of ltr-property"
+            //We need a comment here or linter poops itself
         @else
           @warn "Invalid usage of ltr-property"
       @else if type-of($spacing) == 'list' and length($spacing) == 4
