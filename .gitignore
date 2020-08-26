@@ -11,6 +11,8 @@ test.css.map
 .npmrc
 
 # Folders
+scss/
+css/
 .idea/
 .sass-cache/
 _gh_pages/

@@ -65,11 +65,11 @@ $message-colors: $colors-list !default
         border-color: $color
         @if isRegistered($name+"-dark")
           color: v($name+"-dark")
-        @elseif $name == 'dark'
+        @else if $name == 'dark'
 
         @if isRegistered($name+"-light")
           background-color: v($name+"-light")
-        @elseif $name == 'white'
+        @else if $name == 'white'
           background-color: $color
         @else
           background-color: v("scheme-main-bis")

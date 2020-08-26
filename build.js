@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const path = require('path')
+const path = require('path');
 
-const {ensureDirectoryExistence, renderSassSync, writeOutput, partition, watch, unwatch} = require("./utils");
+const { ensureDirectoryExistence, renderSassSync, writeOutput, partition, watch, unwatch } = require("./utils");
 
 let args = process.argv.slice(2);
 
@@ -37,21 +37,21 @@ if (options.indexOf('--rtl') >= 0) {
 }
 
 const build = async () => {
-  ensureDirectoryExistence(output)
+  ensureDirectoryExistence(output);
 
   if (options.indexOf('--themeable') < 0) {
     //No variables build
     variables.themeable = false
     const render = renderSassSync(input, output, variables);
     //Output the non themeable generated css
-    await writeOutput(output, render, options)
-    return render
+    await writeOutput(output, render, options);
+    return render;
   } else {
     variables.themeable = options.indexOf('--full') < 0 ? true : "full";
 
     let render = renderSassSync(input, output, variables);
 
-    await writeOutput(output, render, options)
+    await writeOutput(output, render, options);
     return render;
   }
 }
@@ -65,14 +65,14 @@ build().then(render => {
       output: process.stdout
     });
     const watcher = async (file) => {
-      console.log("\nFile " + file + " has been touched, recompiling\n")
-      unwatch()
+      console.log("\nFile " + file + " has been touched, recompiling\n");
+      unwatch();
       try {
-        render = await build()
+        render = await build();
       } catch (e) {
-        console.error(e)
+        console.error(e);
       }
-      watch(render, watcher)
+      watch(render, watcher);
 
       rl.question('Continuing watcher, press enter to exit', (answer) => {
         rl.close();
@@ -81,8 +81,8 @@ build().then(render => {
     }
     watch(render, watcher)
     rl.question('Started watcher, press enter to exit', (answer) => {
-        rl.close();
-        unwatch();
+      rl.close();
+      unwatch();
     });
   }
 });
