@@ -73,9 +73,9 @@ const writeOutput = async (output, result, options) => {
 
   console.log("Rendering Complete, saving .css file...")
 
-  const map = options.indexOf('--map') >= 0 ? { prev: result.map.toString(), inline: false, sourcesContent: false } : false;
+  const map = options.map ? { prev: result.map.toString(), inline: false, sourcesContent: false } : false;
 
-  result = await postcss([autoprefixer, options.indexOf('--full') < 0 ? postcssVarOptimize : postcssCalc]).process(result.css, {map, from: output + ".css", to: output + '.css'})
+  result = await postcss([autoprefixer, options.themeable !== 'full' ? postcssVarOptimize : postcssCalc]).process(result.css, {map, from: output + ".css", to: output + '.css'})
 
   const p = [];
   p.push(new Promise((resolve, reject) =>
@@ -90,7 +90,7 @@ const writeOutput = async (output, result, options) => {
     ))
   }
 
-  if (options.indexOf('--min') >= 0) {
+  if (options.min) {
     p.push(new Promise((resolve, reject) =>
       fs.writeFile(output + '.min.css', new cleanCSS({level: 2}).minify(result.css).styles, (err) =>
         err ? console.error(err) || reject() : console.log('Wrote to ' + output + '.min.css') || resolve())

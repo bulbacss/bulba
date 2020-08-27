@@ -1,59 +1,60 @@
 #!/usr/bin/env node
 
+const program = require('commander');
+
+const { version } = require('./package.json');
+
 const path = require('path');
 
 const { ensureDirectoryExistence, renderSassSync, writeOutput, partition, watch, unwatch } = require("./utils");
 
-let args = process.argv.slice(2);
+program
+  .arguments('<cmd> <input> <output>')
+  .version(version, '-v, --version', 'output the current version')
+  .usage('"<pattern>" [options]')
+  .option('-t, --themeable [full]', 'Output optimized themes or non optimized if using full')
+  .option('-s, --min', 'Also output minified files')
+  .option('-m, --map', 'Also output map files')
+  .option('-r --rtl', 'Build in rtl mode')
+  .option('-w --watch', 'Watch for file change and recompile')
+  .parse(process.argv);
 
+const input = path.resolve(process.cwd(), program.args[0]);
 
-let options;
-
-[options, args] = partition(args, (arg) => {
-  return arg.charAt(0) === '-'
-})
-
-if (args.length < 2) {
-  console.error("Usage:" + process.argv[0] + process.argv[1] + " input.sass ouput.css [--themeable [--full]] [--min] [--map]")
-  process.exitCode = 1;
-}
-
-const input = args[0];
-
-if (path.parse(input).ext !== ".sass" && path.parse(input).ext !== ".scss") {
+if (path.parse(program.args[0]).ext !== ".sass" && path.parse(program.args[0]).ext !== ".scss") {
   console.error("The input file must be a sass or scss file")
   process.exitCode = 1;
   return;
 }
 
-const outInfo = path.parse(args[1])
+const outInfo = path.parse(program.args[1])
 
 const output = path.resolve(process.cwd(), outInfo.dir + path.sep + outInfo.name);
 
-const shouldWatch = options.indexOf("--watch") >= 0
+const shouldWatch = program.watch;
 
 let variables = {};
 
-if (options.indexOf('--rtl') >= 0) {
+if (program.rtl) {
   variables.rtl = true
 }
 
 const build = async () => {
   ensureDirectoryExistence(output);
 
-  if (options.indexOf('--themeable') < 0) {
+  if (!program.themeable) {
     //No variables build
     variables.themeable = false
     const render = renderSassSync(input, output, variables);
     //Output the non themeable generated css
-    await writeOutput(output, render, options);
+    await writeOutput(output, render, program);
     return render;
   } else {
-    variables.themeable = options.indexOf('--full') < 0 ? true : "full";
+    variables.themeable = program.themeable === 'full' ? "full" : true;
 
     let render = renderSassSync(input, output, variables);
 
-    await writeOutput(output, render, options);
+    await writeOutput(output, render, program);
     return render;
   }
 }
