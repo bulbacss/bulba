@@ -6,7 +6,7 @@ const { version } = require('./package.json');
 
 const path = require('path');
 
-const { ensureDirectoryExistence, renderSassSync, writeOutput, partition, watch, unwatch } = require("./utils");
+const { ensureDirectoryExistence, renderSassSync, writeOutput, watch, unwatch } = require("./utils");
 
 program
   .arguments('<cmd> <input> <output>')

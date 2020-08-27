@@ -139,10 +139,4 @@ const unwatch = () => {
 }
 
 
-const partition = (array, isValid) => {
-  return array.reduce(([pass, fail], elem) => {
-    return isValid(elem) ? [[...pass, elem], fail] : [pass, [...fail, elem]];
-  }, [[], []]);
-}
-
-module.exports = { ensureDirectoryExistence, writeOutput, renderSassSync, sassToString, partition, watch, unwatch };
+module.exports = { ensureDirectoryExistence, writeOutput, renderSassSync, sassToString, watch, unwatch };
