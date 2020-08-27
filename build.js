@@ -11,13 +11,17 @@ const { ensureDirectoryExistence, renderSassSync, writeOutput, partition, watch,
 program
   .arguments('<cmd> <input> <output>')
   .version(version, '-v, --version', 'output the current version')
-  .usage('"<pattern>" [options]')
+  .usage('input.sass output.css [options]')
   .option('-t, --themeable [full]', 'Output optimized themes or non optimized if using full')
   .option('-s, --min', 'Also output minified files')
   .option('-m, --map', 'Also output map files')
   .option('-r --rtl', 'Build in rtl mode')
   .option('-w --watch', 'Watch for file change and recompile')
   .parse(process.argv);
+
+if (program.args.length < 2) {
+  program.outputHelp(() => program.help());
+}
 
 const input = path.resolve(process.cwd(), program.args[0]);
 
