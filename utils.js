@@ -7,7 +7,7 @@ const ensureDirectoryExistence = (filePath) => {
   if (fs.existsSync(dirname)) {
     return true;
   }
-  fs.mkdirSync(dirname, {recursive: true});
+  fs.mkdirSync(dirname, { recursive: true });
 }
 
 
@@ -30,7 +30,7 @@ const sassToString = (value) => {
 
       let short = true;
       let shortVal = "#";
-      for(let i = 1; i < (a === 255 ? 6 : 8); i+=2) {
+      for (let i = 1; i < (a === 255 ? 6 : 8); i += 2) {
         if (val[i] !== val[i + 1]) {
           short = false
         } else {
@@ -55,7 +55,7 @@ const sassToString = (value) => {
   } else if (value instanceof sass.types.Number) {
     val = value.getValue().toPrecision(2) + value.getUnit();
   } else if (value instanceof sass.types.String) {
-    val = '"'+value.getValue()+'"';
+    val = '"' + value.getValue() + '"';
   } else {
     val = value.getValue();
   }
@@ -73,9 +73,17 @@ const writeOutput = async (output, result, options) => {
 
   console.log("Rendering Complete, saving .css file...")
 
-  const map = options.indexOf('--map') >= 0 ? { prev: result.map.toString(), inline: false, sourcesContent: false } : false;
+  const map = options.indexOf('--map') >= 0 ? {
+    prev: result.map.toString(),
+    inline: false,
+    sourcesContent: false
+  } : false;
 
-  result = await postcss([autoprefixer, options.indexOf('--full') < 0 ? postcssVarOptimize : postcssCalc]).process(result.css, {map, from: output + ".css", to: output + '.css'})
+  result = await postcss([autoprefixer, options.indexOf('--full') < 0 ? postcssVarOptimize : postcssCalc]).process(result.css, {
+    map,
+    from: output + ".css",
+    to: output + '.css'
+  })
 
   const p = [];
   p.push(new Promise((resolve, reject) =>
@@ -92,7 +100,7 @@ const writeOutput = async (output, result, options) => {
 
   if (options.indexOf('--min') >= 0) {
     p.push(new Promise((resolve, reject) =>
-      fs.writeFile(output + '.min.css', new cleanCSS({level: 2}).minify(result.css).styles, (err) =>
+      fs.writeFile(output + '.min.css', new cleanCSS({ level: 2 }).minify(result.css).styles, (err) =>
         err ? console.error(err) || reject() : console.log('Wrote to ' + output + '.min.css') || resolve())
     ))
   }
@@ -102,31 +110,27 @@ const writeOutput = async (output, result, options) => {
 
 const renderSassSync = (input, output, variables, functions) => {
   variables = variables || {};
-  let data = Object.keys(variables).map((v) => "$"+v+':'+variables[v]+";").join("\n")
+  let data = Object.keys(variables).map((v) => "$" + v + ':' + variables[v] + ";").join("\n")
 
   data += '\n@import "' + input + '";'
-  try {
-    return sass.renderSync({
-      data,
-      outFile: output + '.css',
-      includePaths: [path.resolve(process.cwd(), input)],
-      outputStyle: 'expanded',
-      sourceMap: true,
-      sourceMapContents: true,
+  return sass.renderSync({
+    data,
+    outFile: output + '.css',
+    includePaths: [path.resolve(process.cwd(), input)],
+    outputStyle: 'expanded',
+    sourceMap: true,
+    sourceMapContents: true,
 
-      functions,
-    })
-  } catch (e) {
-    console.error(e)
-  }
+    functions,
+  })
 }
 
 const watched = [];
 const watch = (render, cb) => {
   render.stats.includedFiles.map((file) => {
-      watched.push(fs.watch(file, () => {
-        cb(file)
-      }));
+    watched.push(fs.watch(file, () => {
+      cb(file)
+    }));
   });
 }
 
