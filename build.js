@@ -15,12 +15,14 @@ let options;
 
 if (args.length < 2) {
   console.error("Usage:" + process.argv[0] + process.argv[1] + " input.sass ouput.css [--themeable [--full]] [--min] [--map]")
+  process.exitCode = 1;
 }
 
 const input = args[0];
 
 if (path.parse(input).ext !== ".sass" && path.parse(input).ext !== ".scss") {
   console.error("The input file must be a sass or scss file")
+  process.exitCode = 1;
   return;
 }
 
@@ -85,7 +87,4 @@ build().then(render => {
       unwatch();
     });
   }
-}).catch((e) => {
-  console.error(e);
-  process.exit(1);
 });
