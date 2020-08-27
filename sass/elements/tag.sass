@@ -3,6 +3,8 @@ $tag-color: v("text") !default
 $tag-radius: v("radius") !default
 $tag-delete-margin: 1px !default
 
+$tag-colors: $colors-list !default
+
 +register(tag-background-color,$tag-background-color, true)
 +register(tag-radius,$tag-radius, true)
 +register(tag-color,$tag-color, true)
@@ -68,7 +70,7 @@ $tag-delete-margin: 1px !default
     +ltr-property("margin-left", 0.25rem)
     +ltr-property("margin-right", -0.375rem)
   // Colors
-  @each $name in $colors-list
+  @each $name in $tag-colors
     $color: v($name)
     $color-invert: v($name+"-invert")
     &.is-#{$name}

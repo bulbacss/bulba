@@ -7,6 +7,8 @@ $help-size: v("size-small") !default
 +register(label-weight, $label-weight, true)
 +register(help-size, $help-size, true)
 
+$label-colors: $form-colors !default
+
 .label
   color: v("label-color")
   display: block
@@ -26,7 +28,7 @@ $help-size: v("size-small") !default
   display: block
   font-size: v("help-size")
   margin-top: 0.25rem
-  @each $name in $colors-list
+  @each $name in $label-colors
     &.is-#{$name}
       color: v($name)
 

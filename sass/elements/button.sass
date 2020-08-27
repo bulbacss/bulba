@@ -61,6 +61,8 @@ $button-static-border-color: v("border") !default
 +register(button-static-color, $button-static-color, true)
 +register(button-family, $button-family, true)
 
+$button-colors: $colors-list !default
+
 // The button sizes use mixins so they can be used at different breakpoints
 =button-small
   border-radius: v("radius-small")
@@ -154,7 +156,7 @@ $button-static-border-color: v("border") !default
       border-color: transparent
       box-shadow: none
 
-  @each $name in $colors-list
+  @each $name in $button-colors
     $color: v($name)
     $color-invert: v($name+"-invert")
     &.is-#{$name}

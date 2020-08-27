@@ -42,6 +42,8 @@ $table-striped-row-even-hover-background-color: v("scheme-main-ter") !default
 +register(table-striped-row-even-hover-background-color,$table-striped-row-even-hover-background-color, true)
 +register(table-striped-row-even-background-color,$table-striped-row-even-background-color, true)
 
+$table-colors: $colors-list !default
+
 .table
   @extend %block
   background-color: v("table-background-color")
@@ -53,7 +55,7 @@ $table-striped-row-even-hover-background-color: v("scheme-main-ter") !default
     padding: v("table-cell-padding")
     vertical-align: top
     // Colors
-    @each $name in $colors-list
+    @each $name in $table-colors
       $color: v($name)
       $color-invert: v($name+"-invert")
       &.is-#{$name}

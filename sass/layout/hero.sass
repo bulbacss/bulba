@@ -3,6 +3,8 @@ $hero-body-padding-small: 1.5rem !default
 $hero-body-padding-medium: 9rem 1.5rem !default
 $hero-body-padding-large: 18rem 1.5rem !default
 
+$hero-colors: $colors !default
+
 +register(hero-body-padding-small,$hero-body-padding-small, true)
 +register(hero-body-padding-medium,$hero-body-padding-medium, true)
 +register(hero-body-padding-large,$hero-body-padding-large, true)
@@ -20,7 +22,7 @@ $hero-body-padding-large: 18rem 1.5rem !default
     ul
       border-bottom: 0
   // Colors
-  @each $name in $colors-list
+  @each $name in $hero-colors
     $color: v($name)
     $color-invert: v($name+"-invert")
     &.is-#{$name}

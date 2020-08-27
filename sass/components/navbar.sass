@@ -48,6 +48,8 @@ $navbar-bottom-box-shadow-size: 0 -2px 0 0 !default
 
 $navbar-breakpoint: $desktop !default
 
+$navbar-colors: $colors-list !default
+
 +register(navbar-background-color,$navbar-background-color, true)
 +register(navbar-height,$navbar-height, true)
 +register(navbar-z,$navbar-z, true)
@@ -96,7 +98,7 @@ $navbar-breakpoint: $desktop !default
   min-height: v("navbar-height")
   position: relative
   z-index: v("navbar-z")
-  @each $name in $colors-list
+  @each $name in $navbar-colors
     $color: v($name)
     $color-invert: v($name+"-invert")
     &.is-#{$name}

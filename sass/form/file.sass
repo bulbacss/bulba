@@ -11,6 +11,8 @@ $file-name-border-style: solid !default
 $file-name-border-width: 1px 1px 1px 0 !default
 $file-name-max-width: 16em !default
 
+$file-colors: $colors-list !default
+
 +register(file-radius,$file-radius, true)
 +register(file-cta-background-color,$file-cta-background-color, true)
 +register(file-cta-hover-color,$file-cta-hover-color, true)
@@ -29,7 +31,7 @@ $file-name-max-width: 16em !default
   justify-content: flex-start
   position: relative
   // Colors
-  @each $name in $colors-list
+  @each $name in $file-colors
     $color: v($name)
     $color-invert: v($name+"-invert")
     &.is-#{$name}

@@ -4,6 +4,8 @@ $progress-border-radius: v("radius-rounded") !default
 
 $progress-indeterminate-duration: 1.5s !default
 
+$progress-colors: $colors-list !default
+
 +register(progress-border-radius,$progress-border-radius, true)
 +register(progress-bar-background-color,$progress-bar-background-color, true)
 +register(progress-value-background-color,$progress-value-background-color, true)
@@ -30,7 +32,7 @@ $progress-indeterminate-duration: 1.5s !default
     background-color: v("progress-value-background-color")
     border: 0
   // Colors
-  @each $name in $colors-list
+  @each $name in $progress-colors
     $color: v($name)
     &.is-#{$name}
       &::-webkit-progress-value

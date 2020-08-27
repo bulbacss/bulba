@@ -14,6 +14,8 @@ $notification-padding: $notification-padding-vertical $notification-padding-righ
 +register(notification-padding, $notification-padding, true)
 +register(notification-code-background-color, $notification-code-background-color, true)
 
+$notification-colors: $colors-list !default
+
 .notification
   @extend %block
   background-color: v("notification-background-color")
@@ -45,7 +47,7 @@ $notification-padding: $notification-padding-vertical $notification-padding-righ
   .content
     color: currentColor
   // Colors
-  @each $name in $colors-list
+  @each $name in $notification-colors
     $color: v($name)
     $color-invert: v($name+"-invert")
     &.is-#{$name}
