@@ -85,4 +85,4 @@ build().then(render => {
       unwatch();
     });
   }
-});
+}).catch(() => process.exit(1));
